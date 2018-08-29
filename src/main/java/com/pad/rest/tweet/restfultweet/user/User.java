@@ -4,8 +4,12 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -38,7 +42,33 @@ public class User {
 	@OneToMany(mappedBy="user")
 	private List<Tweet> tweets;
 
+//    @ManyToMany
+//    @JoinTable(name = "Relationship",
+//            joinColumns = @JoinColumn(name = "followingId", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "followedId", referencedColumnName = "id"))
+//    public List following;
 	
+//    @ManyToMany(fetch = FetchType.LAZY)
+//    @JoinTable(name = "Relationship",
+//    	joinColumns = @JoinColumn(name = "followingId", referencedColumnName = "id"),
+//    	inverseJoinColumns = @JoinColumn(name = "followedId", referencedColumnName = "id"))
+//    private List<User> following;
+	
+//    @OneToMany
+//    @JoinColumn(name="followingId")
+//    private List<Relationship> FollowingRelationships;
+//	    
+//    @OneToMany
+//    @JoinColumn(name="followedId")
+//    private List<Relationship> FollowerRelationships;
+
+//    @ManyToMany()
+//    private List<Relationship> following;
+//    
+//    @ManyToMany()
+//    private List<Relationship> followers;
+    
+    
 	protected User() {
 		
 	}

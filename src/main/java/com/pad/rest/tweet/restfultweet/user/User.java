@@ -14,12 +14,14 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 //import io.swagger.annotations.ApiModel;
 //import io.swagger.annotations.ApiModelProperty;
 
 //@ApiModel(description="All details about the user.")
 @Entity
-public class User {
+public class User implements UserDetails {
 
 	@Id
 	@GeneratedValue
